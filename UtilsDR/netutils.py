@@ -47,7 +47,10 @@ class drip(object):
         self.ip = ip_network(ipvalue, strict=False)
         self.host = str(IPv4Address(ipvalue.split('/')[0]))
         self.network = self.ip.network_address
+        self.mask = str(self.ip.netmask)
+        self.mask_bin = ".".join(map(str,["{0:08b}".format(int(x)) for x in str(self.mask).split(".")]))
         self.maskbits = self.ip.prefixlen
+        self.host_bin =  ".".join(map(str,["{0:08b}".format(int(x)) for x in str(self.host).split(".")]))
         self.ipversion = self.ip.version
         self.is_multicast = self.ip.is_multicast
         self.is_unicast = not self.ip.is_multicast
