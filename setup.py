@@ -44,7 +44,7 @@ setup(
     #
     # Dans notre cas on en a pas besoin, donc je le commente, mais je le
     # laisse pour que vous sachiez que ça existe car c'est très utile.
-    install_requires=['XlsxWriter', 'pandas', 'openpyxl', 'netaddr >=0.8', 'ipaddress', 'console', 'dnspython', 'geoip2'],
+    install_requires=['XlsxWriter', 'regex', 'pandas', 'openpyxl', 'netaddr >=0.8', 'ipaddress', 'console', 'dnspython', 'geoip2'],
 
     # Active la prise en compte du fichier MANIFEST.in
     include_package_data=True,

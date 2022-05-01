@@ -206,7 +206,6 @@ def test_mac(user_input):
         oui = ""
         return oui
 
-
 def getFormatMac(mac, FormatMac='unix'):
     """Format la mac adresse avec le format passé en argument."""
     _mac = EUI(mac)
