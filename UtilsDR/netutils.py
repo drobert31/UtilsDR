@@ -51,8 +51,8 @@ class drip(object):
         self.host_bin =  ".".join(map(str,["{0:08b}".format(int(x)) for x in str(self.host).split(".")]))
         self.network = self.ip.network_address
         self.mask = str(self.ip.netmask)
-        self.mask_dec = int(self.mask)
-        self.mask_hex = hex(self.mask)
+        self.mask_dec = int(self.ip.netmask)
+        self.mask_hex = hex(self.ip.netmask)
         self.mask_bin = ".".join(map(str,["{0:08b}".format(int(x)) for x in str(self.mask).split(".")]))
         self.maskbits = self.ip.prefixlen
         self.ipversion = self.ip.version
