@@ -48,11 +48,13 @@ class drip(object):
         self.host = str(IPv4Address(ipvalue.split('/')[0]))
         self.host_dec = int(IPv4Address(self.host))
         self.host_hex = hex(self.host_dec)
+        self.host_bin =  ".".join(map(str,["{0:08b}".format(int(x)) for x in str(self.host).split(".")]))
         self.network = self.ip.network_address
         self.mask = str(self.ip.netmask)
+        self.mask_dec = int(self.mask)
+        self.mask_hex = hex(self.mask)
         self.mask_bin = ".".join(map(str,["{0:08b}".format(int(x)) for x in str(self.mask).split(".")]))
         self.maskbits = self.ip.prefixlen
-        self.host_bin =  ".".join(map(str,["{0:08b}".format(int(x)) for x in str(self.host).split(".")]))
         self.ipversion = self.ip.version
         self.is_multicast = self.ip.is_multicast
         self.is_unicast = not self.ip.is_multicast
