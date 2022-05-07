@@ -47,6 +47,7 @@ class drip(object):
         self.ip = ip_network(ipvalue, strict=False)
         self.host = str(IPv4Address(ipvalue.split('/')[0]))
         self.host_dec = int(IPv4Address(self.host))
+        self.host_hex = hex(self.host_dec)
         self.network = self.ip.network_address
         self.mask = str(self.ip.netmask)
         self.mask_bin = ".".join(map(str,["{0:08b}".format(int(x)) for x in str(self.mask).split(".")]))
