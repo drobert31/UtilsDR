@@ -86,6 +86,10 @@ class drip(object):
         return list(ip_network(str(self.ip)).hosts())
 
     def get_ListHosts_str(self):
+        # Si masque < 16 return message "Trop de hosts"
+        if self.maskbits < 16:
+            return "Trop de Hosts"
+
         tmp_l = list()
         for bcl in list(ip_network(str(self.ip)).hosts()):
             #print(str(bcl))
