@@ -88,8 +88,8 @@ class drip(object):
     def get_ListHosts_deb_fin(self):
         Tempo = list(ip_network(str(self.ip)).hosts())
         tmp_l = list()
-        tmp_l.append(Tempo[0])
-        tmp_l.append(Tempo[-1])
+        tmp_l.append(str(Tempo[0])
+        tmp_l.append((Tempo[-1]))
         return tmp_l
 
     def get_ListHosts_str(self):
